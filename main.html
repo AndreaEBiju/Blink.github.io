@@ -20,22 +20,39 @@
   <option value="rural.nic.in">
     <a href="https://rural.nic.in/" alt="Ministry of Rural Development|GoI">Ministry of Rural Development|GoI</a>
       </option>
-  <option value="add">Add more links
+  <option value="add" id="link">Add more links
     <input type="text" id="Link" name="Enter the link to be added to Quick Links">      
       </option>
+  <script>
+document.getElementById("link").onclick = enterLink();
+
+function enterLink() {
+  var link = prompt("Enter the link to be added to Quick Links");
+
+if (link != null) {
+  var opt = document.createElement("OPTION");   // Create a <button> element
+  var a=opt.innerHTML;
+  a = document.createElement("A");
+  document.getElementsByTagName("A")[0].setAttribute("href", link); 
+  document.getElementsByTagName("A")[1].setAttribute("alt", link);
+  document.body.select.appendChild(opt);
+  document.body.select.opt.appendChild(a);
+}
+}
+</script>
   
 </select>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Back</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Next</a>
       </li>    
     </ul>
   </div>  
